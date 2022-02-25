@@ -1,26 +1,21 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Form from "./Form";
+import Form from "./Components/Form";
+import Home from "./Components/Homepage";
 
 const App = () => {
-
   return (
     <div className="header">
-      <h1>Just Some Food.</h1>
-      <p>Come get some quality food at quality prices!</p>
-      <p>Disclaimer: Best in the business.</p>
+      <h1>Time to build a pizza!</h1>
       <nav>
-        <Link to="/"><button id="home-button">Home</button></Link>
-        <Link to="/pizza"><button id="order-pizza">Order Pizza!</button></Link>
+      <Link to="/"><button id="home-button">Home</button></Link>
+      <Link to="/pizza"><button id="order-pizza">Order Pizza!</button></Link>
       </nav>
-  <Switch>
+      <Switch>
       <Route path="/pizza" component={Form} />
-      <Route path="/" component={Home} />
-  </Switch>
+        <Route path="/" component={Home} />
+      </Switch>
     </div>
   );
 };
-
-
 export default App;
